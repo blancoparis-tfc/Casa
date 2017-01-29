@@ -8,6 +8,8 @@
 <md-list>
   <md-list-item *ngFor="let articulo of articulos">
     <a md-mini-fab md-list-avatar (click)="eliminar(articulo.id)"><md-icon>delete</md-icon></a>
+    <a md-mini-fab md-list-avatar [routerLink]="['/articuloEdit', articulo.id]" ><md-icon>edit</md-icon></a>
+
     <h4 md-line>
       {{articulo.id}}-{{articulo.nombre}} Cantidad: {{articulo.cantidad}} Precio: {{articulo.precio}}
     </h4>

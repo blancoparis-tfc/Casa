@@ -31,23 +31,37 @@ export class ArticuloService {
       })
     }
   }
+  public get(id:number):Observable<Articulo>{
+    return this.http.get(this.url+"/"+id)
+      .map((r:Response)=> this.parser(r.json().data));
+  }
 
   public getArticulos(): Observable<Articulo[]> {
     return this.http.get(this.url)
       .map((r: Response) => r.json().data)
-      .map(lista =>
-        lista.map(data => new Articulo(
+      .map(lista =>lista.map(data =>this.parser(data)));
+  }
+
+  private parser(data:any):Articulo{
+    return new Articulo(
           parseInt(data.id)
           , data.nombre, data.descripcion
           , parseInt(data.cantidad)
-          , parseInt(data.precio))));
-  }
+          , parseInt(data.precio))
+  } 
 
   public crear(articulo: Articulo): Observable<Articulo> {
     if (!environment.production) {
       articulo.id = this.idMock++;
     }
     return this.http.post(this.url, JSON.stringify(articulo), { headers: this.headers })
+      .map(extractData)
+      .catch((error) => handleError(error));
+  }
+
+  public actualizar(articulo:Articulo):Observable<Articulo>{
+    console.info(articulo.id)
+    return this.http.put(this.url+"/"+articulo.id, JSON.stringify(articulo), { headers: this.headers })
       .map(extractData)
       .catch((error) => handleError(error));
   }

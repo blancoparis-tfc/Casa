@@ -1,6 +1,9 @@
 import { Response } from '@angular/http'
 import { Observable } from 'rxjs'
 
+export enum Operacion{
+    CREAR,MODIFICAR
+}
 
 export function extractData(res: Response) {
     if (res.status < 200 || res.status >= 300) {

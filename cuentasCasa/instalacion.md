@@ -80,6 +80,17 @@ import {InMenMenuService} from './memory/InMenMenu.service'
     InMemoryWebApiModule.forRoot(InMenMenuService)
 ```
 
+### Bugs de la version 2.0.4
+
+En la version 2.0.4, hay un error a la hora de actualizar, no funciona correctamente.
+
+Solución, en la siguiente versión, pero en la actual hay que actualizar el fichero .js
+
+``` javascript
+        if (id != item.id) {
+
+```
+> Tiene el ===, es un error de tslint. (fichero in-memory-backend.service.js)
 ## Los iconos
 
 ponemos en la siguiente dirección, en el fichero index.html

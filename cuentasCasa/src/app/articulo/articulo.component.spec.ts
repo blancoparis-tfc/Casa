@@ -7,6 +7,7 @@ import { ArticuloComponent } from './articulo.component';
 import { MaterialModule } from '@angular/material';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api'
 import { InMen } from '../InMen.service';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import 'hammerjs';
 
@@ -19,6 +20,7 @@ describe('ArticuloComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ ArticuloComponent ],
       imports:[
+        RouterTestingModule,
             MaterialModule.forRoot(),
                     InMemoryWebApiModule.forRoot(InMen),
 

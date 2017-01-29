@@ -5,20 +5,22 @@ import { Articulo, ArticuloService } from './articulo.service'
   selector: 'app-articulo',
   templateUrl: './articulo.component.html',
   styleUrls: ['./articulo.component.css'],
-  providers:[ArticuloService]
+  providers: [ArticuloService]
 })
 export class ArticuloComponent implements OnInit {
 
-  articulos:Articulo[];
-  
-  constructor(private articuloService:ArticuloService) { }
+  articulos: Articulo[];
+
+  constructor(
+      private articuloService: ArticuloService
+    ) { }
 
   ngOnInit() {
-    this.articuloService.getArticulos().subscribe(data=>this.articulos=data);
+    this.articuloService.getArticulos().subscribe(data => this.articulos = data);
   }
 
-  eliminar(id:number){
-    this.articuloService.eliminar(id).subscribe(data=>console.info('eliminado'));
+  eliminar(id: number) {
+    this.articuloService.eliminar(id).subscribe(data => console.info('eliminado'));
   }
 
 }
