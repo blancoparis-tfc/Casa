@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';
+
+.app-content {
+  padding: 20px;
+}
+
+.app-content md-card {
+  margin: 20px;
+}
+
+.dbp-espacio {
+  flex: 1 1 auto;
+}
+/* Los grid para posicionar */
+div.container
+{
+    display:flex;
+    margin-bottom: 5px;
+    margin-top:5px;
+}
+div.container > div
+{
+    flex: 1 1 5em;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    margin-left: 10px;
+}

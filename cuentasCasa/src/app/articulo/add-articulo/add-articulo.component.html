@@ -1,0 +1,55 @@
+<md-toolbar>
+  <span>Añadir un Articulo </span>
+</md-toolbar>
+<form>
+    <div class="container" fxLayout="row"  >
+      <div fxFlex="70">
+        <md-input-container fxFlex="100">
+          <input md-input placeholder="Nombre" 
+          [(ngModel)]="articulo.nombre" name="nombre" 
+           />
+        </md-input-container>
+      </div>
+      <div fxFlex="30">
+        <md-select placeholder="Categoria" fxFlex="100">
+            <md-option *ngFor="let opcion of categorias" [value]="opcion.id">
+            {{ opcion.descripcion }}
+            </md-option>
+        </md-select>
+      </div>
+    </div>
+    <div class="container" fxLayout="row" >
+      <div fxFlex="100" >
+        <md-input-container fxFlex="100" >
+          <textarea md-input #descripcion placeholder="Descripcion"
+           [(ngModel)]="articulo.descripcion" name="descripcion" 
+           ></textarea>
+          <md-hint align="end">{{descripcion.value.length}} / 1000</md-hint>
+        </md-input-container>
+      </div>
+    </div>
+    <div class="container" fxLayout="row" >
+      <div fxFlex="50" >
+        <md-input-container fxFlex="100">
+          <input md-input placeholder="Cantidad" type="number" 
+          [(ngModel)]="articulo.cantidad" name="cantidad" 
+          />
+        </md-input-container>
+      </div>
+      <div fxFlex="50" >
+        <md-input-container fxFlex="100">
+          <input md-input placeholder="Precio" type="number" step="0.01" 
+          [(ngModel)]="articulo.precio" name="precio" 
+          />
+        </md-input-container>
+      </div>
+
+    </div>
+
+    <div class="container"      fxLayoutAlign="start start" >
+      <div fxFlex="100" fxLayoutAlign="start start" >
+        <button md-button (click)="guardar()">Guardar</button>
+        <button md-button (click)="volver()">Volver</button>
+      </div>
+    </div>
+</form>

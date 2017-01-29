@@ -1,0 +1,5 @@
+[0107/223438:ERROR:process_reader_win.cc(114)] NtOpenThread: {Acceso denegado} Un proceso ha solicitado acceso a un objeto, pero no se le han concedido esos derechos de acceso.  (0xc0000022)
+[0107/223438:ERROR:exception_snapshot_win.cc(87)] thread ID 11492 not found in process
+[0107/223438:WARNING:crash_report_exception_handler.cc(61)] ProcessSnapshotWin::Initialize failed
+[0121/215303:ERROR:tcp_listen_socket.cc(76)] Could not bind socket to 127.0.0.1:6004
+[0121/215303:ERROR:node_debugger.cc(86)] Cannot start debugger server
