@@ -5,7 +5,7 @@
     <div class="container" fxLayout="row"  >
       <div fxFlex="70">
         <md-input-container fxFlex="100">
-          <input md-input placeholder="Nombre" 
+          <input mdInput placeholder="Nombre" 
           [(ngModel)]="articulo.nombre" name="nombre" 
            />
         </md-input-container>
@@ -21,7 +21,7 @@
     <div class="container" fxLayout="row" >
       <div fxFlex="100" >
         <md-input-container fxFlex="100" >
-          <textarea md-input #descripcion placeholder="Descripcion"
+          <textarea mdInput #descripcion placeholder="Descripcion"
            [(ngModel)]="articulo.descripcion" name="descripcion" 
            ></textarea>
           <md-hint align="end">{{descripcion.value.length}} / 1000</md-hint>
@@ -31,14 +31,14 @@
     <div class="container" fxLayout="row" >
       <div fxFlex="50" >
         <md-input-container fxFlex="100">
-          <input md-input placeholder="Cantidad" type="number" 
+          <input mdInput placeholder="Cantidad" type="number" 
           [(ngModel)]="articulo.cantidad" name="cantidad" 
           />
         </md-input-container>
       </div>
       <div fxFlex="50" >
         <md-input-container fxFlex="100">
-          <input md-input placeholder="Precio" type="number" step="0.01" 
+          <input mdInput placeholder="Precio" type="number" step="0.01" 
           [(ngModel)]="articulo.precio" name="precio" 
           />
         </md-input-container>
