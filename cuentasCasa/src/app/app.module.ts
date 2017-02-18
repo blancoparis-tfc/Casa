@@ -32,8 +32,8 @@ import { environment } from '../environments/environment';
     BrowserModule,
     FormsModule,
     HttpModule,
-    MaterialModule.forRoot(),
-    FlexLayoutModule.forRoot(),
+    MaterialModule,
+    FlexLayoutModule,
     environment.importaciones,
     AppRoutingModule
   ],
