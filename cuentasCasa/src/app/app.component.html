@@ -7,15 +7,27 @@
       <md-icon>home</md-icon>
       <span>Inicio</span> 
     </button>
-    <button md-menu-item routerLink="/articulo"> 
+    <button md-menu-item routerLink="/articulo" > 
       <md-icon>apps</md-icon>
       <span>Articulo</span> 
     </button>
   </md-menu>
 
   {{title}}
+
+  <md-input-container>
+        <span md-prefix>
+          <i class="material-icons app-input-icon">search</i>
+        </span>
+    <input mdInput  [mdAutocomplete]="auto" [formControl]="buscarCtrl" >
+  </md-input-container>
+
+  <md-autocomplete #auto="mdAutocomplete">
+    <md-option *ngFor="let buscar of filteredBuscar | async" [value]="buscar">
+      {{ buscar }}
+    </md-option>
+  </md-autocomplete>
+
 </md-toolbar>
 
-    <router-outlet></router-outlet>
-
-
+<router-outlet></router-outlet>

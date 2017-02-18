@@ -3,6 +3,7 @@ import { CUSTOM_ELEMENTS_SCHEMA }      from '@angular/core';
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { MaterialModule } from '@angular/material';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import 'hammerjs';
 
@@ -14,7 +15,7 @@ describe('AppComponent', () => {
         AppComponent
       ],
       imports:[
-            MaterialModule.forRoot()
+            MaterialModule.forRoot(),ReactiveFormsModule
       ],
       schemas:[CUSTOM_ELEMENTS_SCHEMA]
     });

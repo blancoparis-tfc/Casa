@@ -1,7 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { HttpModule } from '@angular/http';
+import { CommonModule } from '@angular/common';
+
 // Configuraciones propias
 import { AppRoutingModule } from './app-routing.module'
 
@@ -31,6 +34,8 @@ import { environment } from '../environments/environment';
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
+    CommonModule,
     HttpModule,
     MaterialModule,
     FlexLayoutModule,
