@@ -23,13 +23,17 @@ import { InicioComponent } from './inicio/inicio.component'
 import './rxjs-extensions';
 import { AddArticuloComponent } from './articulo/add-articulo/add-articulo.component';
 import { environment } from '../environments/environment';
+import { CuestionarioComponent } from './cuestionario/cuestionario.component';
+import { PreguntaComponent } from './cuestionario/pregunta/pregunta.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ArticuloComponent,
     InicioComponent,
-    AddArticuloComponent
+    AddArticuloComponent,
+    CuestionarioComponent,
+    PreguntaComponent
   ],
   imports: [
     BrowserModule,
