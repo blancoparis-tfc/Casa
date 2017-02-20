@@ -47,6 +47,102 @@ export class InMen implements InMemoryDbService {
                             ,estado:''
                         }                        
                     ]
+                },
+                {
+                    bloque:'1'
+                    ,numero:'2'
+                    ,enunciado:'¿Pregunta 2?'
+                    ,anulada:'false'
+                    ,opciones:[
+                        {
+                            apartado:'a'
+                            ,solucion:'apartado a'
+                            ,correcta:'true'
+                            ,estado:''
+                        },
+                        {
+                            apartado:'b'
+                            ,solucion:'apartado b'
+                            ,correcta:'false'
+                            ,estado:''
+                        },
+                        {
+                            apartado:'c'
+                            ,solucion:'apartado c'
+                            ,correcta:'false'
+                            ,estado:''
+                        },
+                        {
+                            apartado:'d'
+                            ,solucion:'apartado d'
+                            ,correcta:'false'
+                            ,estado:''
+                        }                        
+                    ]
+                },
+                {
+                    bloque:'1'
+                    ,numero:'1'
+                    ,enunciado:'¿Pregunta?'
+                    ,anulada:'false'
+                    ,opciones:[
+                        {
+                            apartado:'a'
+                            ,solucion:'apartado a'
+                            ,correcta:'true'
+                            ,estado:''
+                        },
+                        {
+                            apartado:'b'
+                            ,solucion:'apartado b'
+                            ,correcta:'false'
+                            ,estado:''
+                        },
+                        {
+                            apartado:'c'
+                            ,solucion:'apartado c'
+                            ,correcta:'false'
+                            ,estado:''
+                        },
+                        {
+                            apartado:'d'
+                            ,solucion:'apartado d'
+                            ,correcta:'false'
+                            ,estado:''
+                        }                        
+                    ]
+                },
+                {
+                    bloque:'1'
+                    ,numero:'2'
+                    ,enunciado:'¿Pregunta 2?'
+                    ,anulada:'false'
+                    ,opciones:[
+                        {
+                            apartado:'a'
+                            ,solucion:'apartado a'
+                            ,correcta:'true'
+                            ,estado:''
+                        },
+                        {
+                            apartado:'b'
+                            ,solucion:'apartado b'
+                            ,correcta:'false'
+                            ,estado:''
+                        },
+                        {
+                            apartado:'c'
+                            ,solucion:'apartado c'
+                            ,correcta:'false'
+                            ,estado:''
+                        },
+                        {
+                            apartado:'d'
+                            ,solucion:'apartado d'
+                            ,correcta:'false'
+                            ,estado:''
+                        }                        
+                    ]
                 }
             ]}
         ]

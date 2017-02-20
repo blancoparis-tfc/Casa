@@ -3,7 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { MaterialModule } from '@angular/material';
 
 import { PreguntaComponent } from './pregunta.component';
-
+import {Pregunta} from '../cuestionario.service'
 describe('PreguntaComponent', () => {
   let component: PreguntaComponent;
   let fixture: ComponentFixture<PreguntaComponent>;
@@ -22,6 +22,7 @@ describe('PreguntaComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(PreguntaComponent);
     component = fixture.componentInstance;
+    component.pregunta=new Pregunta("",1,"",false,[]);
     fixture.detectChanges();
   });
 

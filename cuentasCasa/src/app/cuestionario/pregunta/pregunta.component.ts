@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import {Pregunta} from '../cuestionario.service'
 
 @Component({
   selector: 'app-pregunta',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PreguntaComponent implements OnInit {
 
-  opcionSeleccion=-1
+
+  @Input('pregunta') public pregunta:Pregunta
+
+  opcionSeleccion="-1"
 
   constructor() { }
 
