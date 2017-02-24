@@ -4,6 +4,7 @@ import { CuestionarioComponent } from './cuestionario.component';
 import { PreguntaComponent } from './pregunta/pregunta.component'
 import { FormsModule } from '@angular/forms';
 import { MaterialModule } from '@angular/material';
+import {FocusDirectiveDirective} from '../core/focus-directive.directive'
 
 describe('CuestionarioComponent', () => {
   let component: CuestionarioComponent;
@@ -11,7 +12,7 @@ describe('CuestionarioComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CuestionarioComponent,PreguntaComponent ],
+      declarations: [ CuestionarioComponent,PreguntaComponent,FocusDirectiveDirective ],
       imports:[
         FormsModule,
         MaterialModule
