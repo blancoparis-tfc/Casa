@@ -1,10 +1,15 @@
-<md-card>
-  <md-card-content>
-    <h2 class="example-h2">{{pregunta.enunciado}}  {{opcionSeleccion}} </h2>
-    <md-radio-group class="example-radio-group"  [(ngModel)]="opcionSeleccion" >
-      <md-radio-button class="example-radio-button" *ngFor="let opcion of pregunta.opciones " [value]="opcion.apartado">
-        {{opcion.apartado}}) {{opcion.solucion}}
-      </md-radio-button>
-    </md-radio-group>
-  </md-card-content>
-</md-card>
+<div class="pregunta" >
+  <md-card >
+    <md-card-content>
+      <h2 class="example-h2">{{pregunta.enunciado}}  {{pregunta.opcion.solucion}} ({{pregunta.opcion.correcta}}) </h2>
+      <md-radio-group class="example-radio-group"  [(ngModel)]="pregunta.opcion" >
+        <md-radio-button  class="example-radio-button" 
+            *ngFor="let opcion of pregunta.opciones; let idx = index" 
+            [value]="opcion" 
+            >
+          {{opcion.apartado}}) {{opcion.solucion}} ({{idx}})
+        </md-radio-button>
+      </md-radio-group>
+    </md-card-content>
+  </md-card>
+</div>

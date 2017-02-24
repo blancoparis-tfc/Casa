@@ -1,7 +1,7 @@
 <md-toolbar>
-  <span>Cuestionario: {{cuestionario.descripcion}} ({{cuestionario.preguntas.length}}) </span>
+  <span>Cuestionario: {{cuestionario.descripcion}} ({{cuestionario.correctas}}/{{cuestionario.preguntas.length}}) </span>
 </md-toolbar> 
-<div (keyup.enter)="corregir()"> 
-  <app-pregunta *ngFor="let pregunta of cuestionario.preguntas" [pregunta]="pregunta">
+<div (keyup.enter)="corregir()" [focus]="focusEvent"  > 
+  <app-pregunta #pr *ngFor="let pregunta of cuestionario.preguntas; let i = index" [pregunta]="pregunta" (keyup.space)="cambiar(i)" >
   </app-pregunta>
 </div>

@@ -25,6 +25,7 @@ import { AddArticuloComponent } from './articulo/add-articulo/add-articulo.compo
 import { environment } from '../environments/environment';
 import { CuestionarioComponent } from './cuestionario/cuestionario.component';
 import { PreguntaComponent } from './cuestionario/pregunta/pregunta.component';
+import { FocusDirectiveDirective } from './core/focus-directive.directive';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,9 @@ import { PreguntaComponent } from './cuestionario/pregunta/pregunta.component';
     InicioComponent,
     AddArticuloComponent,
     CuestionarioComponent,
-    PreguntaComponent
+    PreguntaComponent,
+    FocusDirectiveDirective
+    
   ],
   imports: [
     BrowserModule,

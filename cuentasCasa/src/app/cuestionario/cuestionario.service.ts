@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http,Headers,Response } from '@angular/http'
+import { MdRadioButton } from '@angular/material'
 import { Observable } from 'rxjs'
 import 'rxjs/add/operator/map';
 
@@ -11,6 +12,8 @@ export class Opcion{
         ,public estado:string=''){}
 }
 export class Pregunta{
+    public opcionComponente:MdRadioButton;
+    public opcion:Opcion=new Opcion("","",false);
     constructor(
          public bloque:string
         ,public numero:number
@@ -20,6 +23,7 @@ export class Pregunta{
 }
 
 export class Cuestionario{
+    correctas:number=0;
     constructor(
         public id:number,
         public descripcion:string,
