@@ -14,15 +14,11 @@ export class FocusDirectiveDirective {
         if(this.focusEmitterSubscription) {
             this.focusEmitterSubscription.unsubscribe();
         }
-        console.info(focusEmitter);
         this.focusEmitterSubscription = focusEmitter.subscribe(
             ((evento)=>{
                   evento.focus();
               }
              ).bind(this))
     }    
-    constructor(@Inject(ElementRef) private element: ElementRef
-                ,@Inject(ViewContainerRef) private componente:ViewContainerRef
-                //,@Inject(ComponentRef) private componente:ComponentRef<any>
-                ,private renderer: Renderer) {}
+    constructor( ) {}
 }

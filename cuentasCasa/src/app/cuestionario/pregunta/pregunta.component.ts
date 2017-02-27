@@ -2,6 +2,10 @@ import { Component, OnInit, Input, EventEmitter, ViewChild, ElementRef } from '@
 import {MdRadioButton} from '@angular/material'
 import {Pregunta} from '../cuestionario.service'
 
+export enum StatusPregunta{
+  NADA,CORRECTA,ERROR
+}
+
 @Component({
   selector: 'app-pregunta',
   templateUrl: './pregunta.component.html',
@@ -9,12 +13,13 @@ import {Pregunta} from '../cuestionario.service'
 })
 export class PreguntaComponent implements OnInit {
 
-
   @Input('pregunta') public pregunta:Pregunta
 
   @ViewChild(MdRadioButton ) opcionComponent: MdRadioButton
 
   opcionSeleccion="-1"
+
+private status:StatusPregunta = StatusPregunta.NADA
 
   constructor() { }
 
@@ -22,6 +27,7 @@ export class PreguntaComponent implements OnInit {
   }
 
   corregir():boolean{
+    this.status= this.pregunta.opcion.correcta? StatusPregunta.CORRECTA:StatusPregunta.ERROR
     return this.pregunta.opcion.correcta;  
   }
 }

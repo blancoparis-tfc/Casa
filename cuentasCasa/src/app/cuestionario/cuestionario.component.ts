@@ -1,6 +1,7 @@
 import { Component, OnInit, EventEmitter, ViewChildren, QueryList } from '@angular/core';
 import { Cuestionario, CuestionarioService, Pregunta } from './cuestionario.service'
 import { PreguntaComponent } from './pregunta/pregunta.component'
+
 @Component({
   selector: 'app-cuestionario',
   templateUrl: './cuestionario.component.html',
@@ -19,11 +20,15 @@ export class CuestionarioComponent implements OnInit {
 
   ngOnInit() {
     this.cuestionarioService.get(1).subscribe(data => this.cuestionario = data)
+    //TODO: Falta por ver como llevar el foco
+    //this.cambiar(-1);
   }
 
   corregir() {
     this.cuestionario.correctas = this.preguntas.filter(preguntaComponente => preguntaComponente.corregir()).length;
+    this.cambiar(-1);
   }
+
   cambiar(i: number) {
     if (this.cuestionario.preguntas.length > i + 1) {
       this.focusEvent.emit(this.preguntas.toArray()[i+1].opcionComponent);
