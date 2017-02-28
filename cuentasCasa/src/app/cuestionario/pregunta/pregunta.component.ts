@@ -1,9 +1,9 @@
 import { Component, OnInit, Input, EventEmitter, ViewChild, ElementRef } from '@angular/core';
-import {MdRadioButton} from '@angular/material'
-import {Pregunta} from '../cuestionario.service'
+import { MdRadioButton } from '@angular/material'
+import { Pregunta } from '../cuestionario.service'
 
-export enum StatusPregunta{
-  NADA,CORRECTA,ERROR
+export enum StatusPregunta {
+  NADA, CORRECTA, ERROR
 }
 
 @Component({
@@ -13,21 +13,21 @@ export enum StatusPregunta{
 })
 export class PreguntaComponent implements OnInit {
 
-  @Input('pregunta') public pregunta:Pregunta
+  @Input('pregunta') public pregunta: Pregunta
 
-  @ViewChild(MdRadioButton ) opcionComponent: MdRadioButton
+  @ViewChild(MdRadioButton) opcionComponent: MdRadioButton
 
-  opcionSeleccion="-1"
+  opcionSeleccion = "-1"
 
-private status:StatusPregunta = StatusPregunta.NADA
+  private status: StatusPregunta = StatusPregunta.NADA
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  corregir():boolean{
-    this.status= this.pregunta.opcion.correcta? StatusPregunta.CORRECTA:StatusPregunta.ERROR
-    return this.pregunta.opcion.correcta;  
+  corregir(): boolean {
+    this.status = this.pregunta.opcion.correcta ? StatusPregunta.CORRECTA : this.pregunta.opcion.apartado==""?StatusPregunta.NADA: StatusPregunta.ERROR
+    return this.pregunta.opcion.correcta;
   }
 }
