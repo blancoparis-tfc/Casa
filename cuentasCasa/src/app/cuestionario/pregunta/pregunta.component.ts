@@ -17,17 +17,32 @@ export class PreguntaComponent implements OnInit {
 
   @ViewChild(MdRadioButton) opcionComponent: MdRadioButton
 
-  opcionSeleccion = "-1"
+  private opcionSeleccion = "-1"
+
+  private visible:boolean;
+
+  private corregido:boolean;
 
   private status: StatusPregunta = StatusPregunta.NADA
 
   constructor() { }
 
   ngOnInit() {
+    this.visible=true;
+    this.corregido=false;
   }
 
   corregir(): boolean {
     this.status = this.pregunta.opcion.correcta ? StatusPregunta.CORRECTA : this.pregunta.opcion.apartado==""?StatusPregunta.NADA: StatusPregunta.ERROR
+    this.corregido=true;
     return this.pregunta.opcion.correcta;
+}
+
+  reset(){
+    this.visible=true;
+  }
+
+  filtrar(status:StatusPregunta){
+    this.visible=(this.status==status);
   }
 }

@@ -1,5 +1,9 @@
 <md-toolbar>
   <span>Cuestionario: {{cuestionario.descripcion}} ({{cuestionario.correctas}}/{{cuestionario.preguntas.length}}) </span>
+  <div class="button-row" *ngIf="corregido">
+    <button md-mini-fab color="primary" (click)="filtrarValidos()"><md-icon>check</md-icon></button>
+    <button md-mini-fab color="accent" (click)="filtrarErrores()"><md-icon>remove</md-icon></button>
+  </div>
 </md-toolbar> 
 <div (keyup.enter)="corregir()" [focus]="focusEvent"  > 
   <app-pregunta #pr *ngFor="let pregunta of cuestionario.preguntas; let i = index" [pregunta]="pregunta" (keyup.space)="cambiar(i)" >

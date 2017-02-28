@@ -1,12 +1,12 @@
-<div class="pregunta" >
+<div class="pregunta" *ngIf="visible" >
   <md-card [ngClass]="{mal: status==2,bien: status==1,nada: status==0}">
     <md-card-content>
       <h2 class="example-h2">{{pregunta.enunciado}}  </h2>
       <md-radio-group class="example-radio-group"  [(ngModel)]="pregunta.opcion" >
         <md-radio-button  class="example-radio-button" 
             *ngFor="let opcion of pregunta.opciones; let idx = index" 
-            [value]="opcion" 
-            >
+            [ngClass]="{selectedValue: opcion.correcta && corregido}"
+            [value]="opcion" >
           {{opcion.apartado}}) {{opcion.solucion}} ({{idx}})
         </md-radio-button>
       </md-radio-group>

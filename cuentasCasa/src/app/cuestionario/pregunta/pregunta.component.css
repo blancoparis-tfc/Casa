@@ -7,9 +7,12 @@
   margin: 5px;
 }
 
-.example-selected-value {
-  margin: 15px 0;
+.selectedValue {
+  font-weight: bold;
 }
+
+
+
 .pregunta{
   padding-top: 5px;
   padding-bottom: 5px;
