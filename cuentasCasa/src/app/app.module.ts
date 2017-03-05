@@ -23,13 +23,20 @@ import { InicioComponent } from './inicio/inicio.component'
 import './rxjs-extensions';
 import { AddArticuloComponent } from './articulo/add-articulo/add-articulo.component';
 import { environment } from '../environments/environment';
+import { CuestionarioComponent } from './cuestionario/cuestionario.component';
+import { PreguntaComponent } from './cuestionario/pregunta/pregunta.component';
+import { FocusDirectiveDirective } from './core/focus-directive.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     ArticuloComponent,
     InicioComponent,
-    AddArticuloComponent
+    AddArticuloComponent,
+    CuestionarioComponent,
+    PreguntaComponent,
+    FocusDirectiveDirective
+    
   ],
   imports: [
     BrowserModule,
