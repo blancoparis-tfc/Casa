@@ -8,6 +8,8 @@ import { MaterialModule } from '@angular/material';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api'
 import { InMen } from '../../InMen.service';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 import { RouterTestingModule } from '@angular/router/testing';
 
@@ -24,6 +26,7 @@ describe('AddArticuloComponent', () => {
       declarations: [AddArticuloComponent],
       imports: [
         FormsModule,
+        BrowserAnimationsModule,
         MaterialModule.forRoot(),
         InMemoryWebApiModule.forRoot(InMen),
         RouterTestingModule
